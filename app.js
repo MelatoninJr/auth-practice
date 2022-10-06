@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const session = require("express-session");
 const passport = require("passport");
-const bycrypt = require('bycryptjs')
+const bycrypt = require('bycryptjsc')
 const LocalStrategy = require("passport-local").Strategy;
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
@@ -11,6 +11,8 @@ const mongoDb = "mongodb+srv://admin:admin@cluster0.mstcgxc.mongodb.net/local_li
 mongoose.connect(mongoDb, { useUnifiedTopology: true, useNewUrlParser: true });
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "mongo connection error"));
+
+//saving
 
 const User = mongoose.model(
   "User",
